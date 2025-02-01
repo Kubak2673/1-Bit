@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Death
-  - 
+  - Interact
   - 
   - 
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BehindEverything
+    uniqueID: 3711466523
+    locked: 0
   - name: Death
     uniqueID: 2831766515
     locked: 0

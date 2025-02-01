@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
-using UnityEditor.ShaderGraph;
 
 public class PlayerSwitch : MonoBehaviour
 {
@@ -14,30 +12,34 @@ public class PlayerSwitch : MonoBehaviour
     [SerializeField] MonoBehaviour player2Position;
     [SerializeField] BoxCollider2D boxCollider1;
     [SerializeField] BoxCollider2D boxCollider2;
+    [SerializeField] CapsuleCollider2D circleCollider1;
+    [SerializeField] CapsuleCollider2D circleCollider2;
     [SerializeField] GameObject BGWhite1;
     [SerializeField] GameObject BGWhite2;
     [SerializeField] GameObject BGBlack1;
     [SerializeField] GameObject BGBlack2;
+    [SerializeField] GameObject GroundWandB;
+    [SerializeField] GameObject GroundBandW;
     [SerializeField] GameObject Walls1;
     [SerializeField] GameObject Walls2;
+    [SerializeField] GameObject Death1;
+    [SerializeField] GameObject Death2;
     [SerializeField] GameObject decowhite1;
     [SerializeField] GameObject decowhite2;
     [SerializeField] GameObject decoblack1;
     [SerializeField] GameObject decoblack2;
+    [SerializeField] GameObject collidersBox1;
+    [SerializeField] GameObject collidersBox2;
     [SerializeField] SpriteRenderer player1;
     [SerializeField] SpriteRenderer player2;
     [SerializeField] Sprite phase;
     [SerializeField] Sprite normal;
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
     void OnInteract(InputValue value)
     {
+        if (circleCollider1.IsTouchingLayers(LayerMask.GetMask("Interact")) || circleCollider2.IsTouchingLayers(LayerMask.GetMask("Interact")) || boxCollider1.IsTouchingLayers(LayerMask.GetMask("Interact")) || boxCollider2.IsTouchingLayers(LayerMask.GetMask("Interact")))
+        {
+            return;
+        }
         if (value.isPressed)
         {
             if(box1.activeSelf == true)
@@ -70,15 +72,12 @@ public class PlayerSwitch : MonoBehaviour
         decowhite2.SetActive(true);
         player1.sprite = phase;
         player2.sprite = normal;
-    }
-    // TODO:
-    // 1. Colors Switch
-    // 2. Kill if in block overlap circle
-    // 3. Another Level
-    void Die()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Debug.Log("You died");
+        collidersBox1.SetActive(false);
+        collidersBox2.SetActive(true);
+        GroundWandB.SetActive(false);
+        GroundBandW.SetActive(true);
+        Death1.SetActive(true);
+        Death2.SetActive(false);
     }
     void SwitchPlayer2()
     {
@@ -100,5 +99,11 @@ public class PlayerSwitch : MonoBehaviour
         decowhite1.SetActive(true);
         player1.sprite = normal;
         player2.sprite = phase;
+        collidersBox1.SetActive(true);
+        collidersBox2.SetActive(false);
+        GroundWandB.SetActive(true);
+        GroundBandW.SetActive(false);
+        Death1.SetActive(false);
+        Death2.SetActive(true);
     }
 }
