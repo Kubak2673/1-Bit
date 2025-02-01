@@ -20,13 +20,19 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnJump(InputValue value)
     {
-        if (!boxCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if(rb != null)
         {
-            return;
-        }
-        if (value.isPressed)
-        {
-            rb.linearVelocity += new Vector2(0, jumpHeight);
+            if(boxCollider != null)
+            {
+                if (!boxCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+                {
+                    return;
+                }
+            }
+            if (value.isPressed)
+            {
+                rb.linearVelocity += new Vector2(0, jumpHeight);
+            }
         }
     }
     void OnMove(InputValue value)

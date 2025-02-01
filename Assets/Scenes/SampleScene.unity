@@ -178,8 +178,8 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.01}
-  m_Size: {x: 1, y: 0.98}
-  m_Direction: 0
+  m_Size: {x: 1, y: 0.93}
+  m_Direction: 1
 --- !u!50 &482175644
 Rigidbody2D:
   serializedVersion: 5
@@ -196,7 +196,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 8
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bb6c8dd5e90c736438ac9b40feb8d19b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -355,7 +355,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0026160479, y: -0.39763674}
+  m_Offset: {x: 0, y: -0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -365,7 +365,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.92151904, y: 0.20472652}
+  m_Size: {x: 1, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &482175650
 MonoBehaviour:
@@ -380,7 +380,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   box1: {fileID: 1290622290}
-  box2: {fileID: 778839522}
   player1Movement: {fileID: 482175645}
   player2Movement: {fileID: 1831672952}
   player1Position: {fileID: 482175651}
@@ -1301,7 +1300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &778839523
 Transform:
   m_ObjectHideFlags: 0
@@ -1614,7 +1613,17 @@ Tilemap:
   m_GameObject: {fileID: 1290622290}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -2, y: -4, z: 0}
+  - first: {x: -7, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -6, y: -4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -1635,16 +1644,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -1, y: -3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -7, y: -2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -1808,6 +1807,7 @@ GameObject:
   - component: {fileID: 1831672949}
   - component: {fileID: 1831672952}
   - component: {fileID: 1831672956}
+  - component: {fileID: 1831672957}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -1849,7 +1849,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0026160479, y: -0.39763674}
+  m_Offset: {x: 0, y: -0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1859,7 +1859,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.92151904, y: 0.20472652}
+  m_Size: {x: 1, y: 0.2}
   m_EdgeRadius: 0
 --- !u!70 &1831672950
 CapsuleCollider2D:
@@ -1896,8 +1896,8 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.01}
-  m_Size: {x: 1, y: 0.98}
-  m_Direction: 0
+  m_Size: {x: 1, y: 0.93}
+  m_Direction: 1
 --- !u!50 &1831672951
 Rigidbody2D:
   serializedVersion: 5
@@ -1914,7 +1914,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 8
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bb6c8dd5e90c736438ac9b40feb8d19b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2054,6 +2054,23 @@ MonoBehaviour:
   object1: {fileID: 1831672955}
   object2: {fileID: 482175648}
   xOffset: 8
+--- !u!114 &1831672957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831672948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161fb0f1a2751374d9aaf537e7c37606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  box1: {fileID: 1290622290}
+  player1Movement: {fileID: 482175645}
+  player2Movement: {fileID: 1831672952}
+  player1Position: {fileID: 482175651}
+  player2Position: {fileID: 1831672956}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
