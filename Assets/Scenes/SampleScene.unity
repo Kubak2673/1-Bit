@@ -1707,6 +1707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5.5
   jumpHeight: 9.5
+  deceleration: 100
   dust: {fileID: 1006538948}
   boxCollider: {fileID: 482175649}
 --- !u!114 &482175646
@@ -2241,7 +2242,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -16070,6 +16071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5.5
   jumpHeight: 9
+  deceleration: 100
   dust: {fileID: 1712977308}
   boxCollider: {fileID: 1831672949}
 --- !u!114 &1831672953
