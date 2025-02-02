@@ -21,6 +21,8 @@ public class PlayerSwitch : MonoBehaviour
     [SerializeField] GameObject GroundWandB;
     [SerializeField] GameObject GroundBandW;
     [SerializeField] GameObject Walls1;
+    [SerializeField] AudioClip switchon;
+    AudioSource audioSource;
     [SerializeField] GameObject Walls2;
     [SerializeField] GameObject Death1;
     [SerializeField] GameObject Death2;
@@ -34,6 +36,9 @@ public class PlayerSwitch : MonoBehaviour
     [SerializeField] SpriteRenderer player2;
     [SerializeField] Sprite phase;
     [SerializeField] Sprite normal;
+    private void Start() {
+        audioSource = GetComponent<AudioSource>();
+    }
     void OnInteract(InputValue value)
     {
         if (circleCollider1.IsTouchingLayers(LayerMask.GetMask("Interact")) || circleCollider2.IsTouchingLayers(LayerMask.GetMask("Interact")) || boxCollider1.IsTouchingLayers(LayerMask.GetMask("Interact")) || boxCollider2.IsTouchingLayers(LayerMask.GetMask("Interact")))
@@ -54,6 +59,7 @@ public class PlayerSwitch : MonoBehaviour
     }
     void SwitchPlayer1()
     {
+        audioSource.PlayOneShot(switchon, 1f);
         player2Movement.enabled = true;
         player1Movement.enabled = false;
         player2Position.enabled = false;
@@ -81,6 +87,7 @@ public class PlayerSwitch : MonoBehaviour
     }
     void SwitchPlayer2()
     {
+        audioSource.PlayOneShot(switchon, 1f);
         player2Movement.enabled = false;
         player1Movement.enabled = true;
         player2Position.enabled = true;

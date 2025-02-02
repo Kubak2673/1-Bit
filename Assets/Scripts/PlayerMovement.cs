@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,13 +11,15 @@ public class PlayerMovement : MonoBehaviour
     [Header("Komponenty")]
     [SerializeField] private ParticleSystem dust;
     [SerializeField] private BoxCollider2D boxCollider;
-
+    [SerializeField] AudioClip impact;
+    AudioSource audioSource;
     private Rigidbody2D rb;
     private float horizontal;
     private bool inAir = false;
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         if (boxCollider == null)
         {
@@ -27,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-
         Walk();
         FlipSprite();
         HandleJump();
@@ -45,11 +47,13 @@ public class PlayerMovement : MonoBehaviour
             if (boxCollider != null && !boxCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
                 return;
             Jump();
+
         }
     }
 
     void Jump()
     {
+        audioSource.PlayOneShot(impact, 1f);
         CreateDust();
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpHeight);
         inAir = true;
