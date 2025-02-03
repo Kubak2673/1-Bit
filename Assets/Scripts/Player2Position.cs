@@ -12,7 +12,7 @@ public class Player2Position : MonoBehaviour
         if (object1 != null && object2 != null)
         {
             // Calculate the new position with offset
-            float newXPosition = object2.position.x + (object1.position.x < object2.position.x ? -xOffset : xOffset);
+            float newXPosition = object2.position.x + (object1.position.x < object2.position.x ? -Mathf.Abs(xOffset) : Mathf.Abs(xOffset));
             object1.position = new Vector3(newXPosition, object2.position.y, object2.position.z);
         }
     }

@@ -27,11 +27,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
+        inAir = false;
+    }
+
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         Walk();
-        FlipSprite();
         HandleJump();
         if (inAir && boxCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
@@ -47,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
             if (boxCollider != null && !boxCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
                 return;
             Jump();
-
         }
     }
 
@@ -68,14 +75,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.linearVelocity = new Vector2(horizontal * walkSpeed, rb.linearVelocity.y);
-        }
-    }
-
-    void FlipSprite()
-    {
-        if (Mathf.Abs(rb.linearVelocity.x) > Mathf.Epsilon)
-        {
-            transform.localScale = new Vector2(Mathf.Sign(rb.linearVelocity.x), 1f);
         }
     }
 
