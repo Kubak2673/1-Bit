@@ -1834,7 +1834,7 @@ SpriteRenderer:
   m_SortingLayerID: -1413707261
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4606157284126940538, guid: 6c18305711a521548b63c8a00dee2a9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8187216e51a14ca45b903c4112ad39cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1948,8 +1948,8 @@ MonoBehaviour:
   collidersBox2: {fileID: 1884528750}
   player1: {fileID: 482175647}
   player2: {fileID: 1831672954}
-  phase: {fileID: 7381869878930933662, guid: eafdd60c1f4c7a44db4bb94dfa1659a2, type: 3}
-  normal: {fileID: 4606157284126940538, guid: 6c18305711a521548b63c8a00dee2a9d, type: 3}
+  phase: {fileID: 21300000, guid: 9833951b9763029489a38c297f018248, type: 3}
+  normal: {fileID: 21300000, guid: 8187216e51a14ca45b903c4112ad39cd, type: 3}
 --- !u!114 &482175651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15973,7 +15973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5.5
-  jumpHeight: 9
+  jumpHeight: 9.5
   deceleration: 100
   dust: {fileID: 1712977308}
   boxCollider: {fileID: 1831672949}
@@ -16052,7 +16052,7 @@ SpriteRenderer:
   m_SortingLayerID: -1413707261
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7381869878930933662, guid: eafdd60c1f4c7a44db4bb94dfa1659a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9833951b9763029489a38c297f018248, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0783671fdec384641a84d61ca2061a75
+guid: 8187216e51a14ca45b903c4112ad39cd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6200118337827907677
-    second: Blank_0
+      213: -3299820805893271691
+    second: bettera_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blank_0
+      name: bettera_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d582e9357ce3b0650800000000000000
-      internalID: 6200118337827907677
+      spriteID: 57fc942d57ea432d0800000000000000
+      internalID: -3299820805893271691
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Blank_0: 6200118337827907677
+      bettera_0: -3299820805893271691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
