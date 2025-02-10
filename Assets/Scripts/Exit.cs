@@ -5,6 +5,8 @@ using System.Collections;
 public class Exit : MonoBehaviour
 {
     [SerializeField] ParticleSystem ext;
+    [SerializeField] float waitTime = 3f;
+    [SerializeField] Animator transition;
     [SerializeField] GameObject exitExplode;
     [SerializeField] AudioClip exit;
     AudioSource audioSource;
@@ -26,7 +28,8 @@ public class Exit : MonoBehaviour
 
     private IEnumerator WaitAndLoadScene()
     {
-        yield return new WaitForSeconds(3f);
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -5041,6 +5041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ext: {fileID: 6682873660220086315}
+  waitTime: 1
+  transition: {fileID: 0}
   exitExplode: {fileID: 7482245733624116052}
   exit: {fileID: 8300000, guid: 7d9fc421c06a06d46b56ca9fc85cc58a, type: 3}
 --- !u!82 &1450560739475668808
